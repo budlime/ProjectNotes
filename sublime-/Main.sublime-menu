@@ -1,0 +1,45 @@
+[
+    {
+        "id": "project",
+        "children":
+        [
+            {
+                "caption":   "Open Project Note",
+                "command":   "project_notes_open",
+                "mnemonic":  "O"
+            }
+        ]
+    },
+
+    {
+        "id": "preferences",
+        "children": [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children": [
+                    {
+                        "caption": "ProjectNotes",
+                        "children": [
+                            {
+                                "caption": "Settings",
+                                "command": "edit_settings",
+                                "args": {
+                                    "base_file": "${packages}/ProjectNotes/ProjectNotes.sublime-settings",
+                                    "default": "// Settings in here override those in \"ProjectNotes/ProjectNotes.sublime-settings\",\n\n{\n\t$0\n}\n"
+                                }
+                            }, {
+                                "caption": "Key Bindings",
+                                "command": "edit_settings",
+                                "args": {
+                                    "base_file": "${packages}/ProjectNotes/sublime-/Default (${platform}).sublime-keymap"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
