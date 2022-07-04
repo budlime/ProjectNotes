@@ -7,10 +7,8 @@ import sublime_plugin
 from os.path import isdir, isfile, expanduser, split, join, basename, splitext
 from os import sep, getenv, makedirs
 
-from typing import Optional
-
 def tilde_prefix(target: str):
-    home: Optional[str] = getenv("HOME")
+    home = getenv("HOME")
     target = expanduser(target)
 
     if home and target.startswith(home):
