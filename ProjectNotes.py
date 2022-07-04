@@ -9,15 +9,11 @@ from os import sep, getenv, makedirs
 
 from typing import Optional
 
-def tilde_prefix(target: str, use_tilde: bool):
+def tilde_prefix(target: str):
     home: Optional[str] = getenv("HOME")
     target = expanduser(target)
 
-    # make sure directories have a trailing slash
-    if isdir(target) and target != sep and target[-1] != sep:
-        target += sep
-
-    if use_tilde and home and target.startswith(home):
+    if home and target.startswith(home):
         target = "~" + target[len(home) :]
 
     return target
@@ -27,7 +23,7 @@ def add_directory_to_project(target: str, name: str) -> None:
     project_data = win.project_data() or {}
     project_folders = project_data.get("folders") or []
 
-    directory = tilde_prefix(target, True)[:-1]
+    directory = tilde_prefix(target)
 
     folder = dict(
         path=directory,
