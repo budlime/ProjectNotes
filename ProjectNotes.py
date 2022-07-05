@@ -5,7 +5,7 @@ import sublime
 import sublime_plugin
 
 from os.path import isdir, isfile, expanduser, split, join, basename, splitext
-from os import sep, getenv, makedirs
+from os import getenv, makedirs
 
 def tilde_prefix(target: str):
     home = getenv("HOME")
