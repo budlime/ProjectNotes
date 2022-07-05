@@ -1,8 +1,10 @@
-This package provides a single command (`project_notes_open`).
-When the command is executed it will open the file:  
-`$notes_dir_path/$PROJECT_NAME/$note_file_name`  
+This package provides two commands:  
+`project_notes_open` and `project_notes_list`  
 
-`ProjectNotes.sublime-settings`  
+---
+
+## default settings
+
 ```JSON
 {
   "notes_dir_path": "...",
@@ -11,6 +13,18 @@ When the command is executed it will open the file:
   "note_dir_name": "notes"
 }
 ```
+---
+
+## project_notes_list
+
+This will display a quickpanel listing the names
+of projects which have a note named **$note_file_name**.
+And open that file upon selection.
+
+## project_notes_open
+
+When the command is executed it will open the file:  
+`$notes_dir_path/$PROJECT_NAME/$note_file_name`  
 
 If there is no project associated with the active
 window the command will not do anything.
@@ -35,10 +49,11 @@ This simple package makes that workflow seamless.
 
 ## keybinding
 
-There is no keybinding enabled by default, I personally use
+There is no keybindings enabled by default, I personally use
 <key>Alt</key>+<key>n</key>:  
 ```JSON
 { "keys": ["alt+n"], "command": "project_notes_open" }
+{ "keys": ["alt+shift+n"], "command": "project_notes_list" }
 ```
 
 ## contact
